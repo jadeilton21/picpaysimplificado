@@ -4,8 +4,8 @@ package com.picpaysimplificado.picpaysimplificado.doMain.user;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
+import javax.swing.text.Document;
 import java.math.BigDecimal;
 
 @Entity(name = "users")
@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
 
@@ -22,14 +21,16 @@ public class User {
     private Long id;
     private String nome;
     private String sobreNome;
-    @Column(insertable = true)
+
+    @Column(unique = true)
     private String document;
     @Email
-    @Column(insertable = true)
+    @Column(unique=true)
     private String email;
 
+
     private String passoword;
-    private BigDecimal bigDecimal;
+    private BigDecimal Balance;
     @Enumerated(EnumType.STRING)
     private TypeUser typeUser;
 
