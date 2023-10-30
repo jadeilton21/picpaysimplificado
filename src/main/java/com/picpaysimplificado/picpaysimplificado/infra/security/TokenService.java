@@ -19,7 +19,7 @@ public class TokenService {
     @Value("${api.security.token.secret}")
     private String secret;
 
-    private static final String ISSUER = "";
+    private static final String ISSUER = "picpaysimplificado";
 
     public String gerarToken(Usuario usuario) {
         try {
