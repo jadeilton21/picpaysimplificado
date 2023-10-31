@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 
 
 @Service
@@ -33,6 +34,17 @@ public class TransactionService {
 
         userServices.validateTransection(sender,transaction.value());
 
+
+        boolean isAuthorized = this.authorizedTrasaction(sender,transaction.value()){
+            if(!this.authorizedTrasaction(sender, transaction.value())){
+                throw new Exception("Transação não Autorizada.")
+            }
+        }
+
+
+    }
+
+    public boolean authorizedTrasaction(User sender, BigDecimal value){
 
     }
 }
