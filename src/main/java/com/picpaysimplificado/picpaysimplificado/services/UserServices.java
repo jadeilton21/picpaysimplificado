@@ -1,4 +1,4 @@
-package com.picpaysimplificado.picpaysimplificado.doMain.services;
+package com.picpaysimplificado.picpaysimplificado.services;
 
 
 import com.picpaysimplificado.picpaysimplificado.doMain.user.TypeUser;
