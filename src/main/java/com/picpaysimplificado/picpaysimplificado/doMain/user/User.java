@@ -1,6 +1,7 @@
 package com.picpaysimplificado.picpaysimplificado.doMain.user;
 
 
+import com.picpaysimplificado.picpaysimplificado.dtos.UserDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -35,9 +36,13 @@ public class User {
     private TypeUser typeUser;
 
 
-
-
-
-
-
+    public User(UserDTO data) {
+        this.nome = data.nome();
+        this.sobreNome = data.sobreNome();
+        this.document = data.document();
+        this.email = data.email();
+        this.passoword = data.passoword();
+        this.Balance = data.balance();
+        this.typeUser = data.typeUser();
+    }
 }
