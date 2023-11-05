@@ -4,6 +4,7 @@ package com.picpaysimplificado.picpaysimplificado.services;
 import com.picpaysimplificado.picpaysimplificado.doMain.user.User;
 import com.picpaysimplificado.picpaysimplificado.dtos.NotificationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +24,14 @@ public class NotificationService {
 
         ResponseEntity<String> notificationResponse = restTemplate.postForEntity("http://o4d9z.mocklab.io/notify",notificationRequest, String.class);
 
+
+
+        if(!(notificationResponse.getStatusCode() == HttpStatus.OK)){
+
+            System.out.println("Erro ao Enviar Notificação.");
+            throw new Exception("Serviço de Notificação está fora do Ar.");
+
+        }
     }
 
 }
