@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 
 @Service
@@ -47,6 +48,10 @@ public class UserServices {
         this.saverUser(newUser);
         return newUser;
 
+    }
+
+    public List<User> getAllUsers(){
+        return this.userRepository.findAll();
     }
 
 
