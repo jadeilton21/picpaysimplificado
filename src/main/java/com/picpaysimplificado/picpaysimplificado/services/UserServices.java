@@ -4,6 +4,7 @@ package com.picpaysimplificado.picpaysimplificado.services;
 import com.picpaysimplificado.picpaysimplificado.doMain.user.TypeUser;
 import com.picpaysimplificado.picpaysimplificado.doMain.user.User;
 import com.picpaysimplificado.picpaysimplificado.doMain.user.UserRepository;
+import com.picpaysimplificado.picpaysimplificado.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,14 @@ public class UserServices {
     public User findUserById(Long id) throws Exception{
 
         return this.userRepository.findUserById(id).orElseThrow(() -> new Exception("Usúario não Encontrado."));
+
+    }
+
+
+    public User createUser(UserDTO data){
+        User newUser = new User(data);
+        this.saverUser(newUser);
+        return newUser;
 
     }
 
