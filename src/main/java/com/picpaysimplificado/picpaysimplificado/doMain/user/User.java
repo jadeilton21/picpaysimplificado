@@ -35,6 +35,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private TypeUser typeUser;
 
+    private boolean ativo;
+
 
     public User(UserDTO data) {
         this.nome = data.nome();
@@ -44,5 +46,9 @@ public class User {
         this.passoword = data.passoword();
         this.Balance = data.balance();
         this.typeUser = data.typeUser();
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
