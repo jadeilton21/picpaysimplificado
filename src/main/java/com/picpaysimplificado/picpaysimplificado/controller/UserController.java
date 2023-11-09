@@ -1,5 +1,6 @@
 package com.picpaysimplificado.picpaysimplificado.controller;
 
+import com.picpaysimplificado.picpaysimplificado.doMain.user.DadosDetalhamentoUsers;
 import com.picpaysimplificado.picpaysimplificado.doMain.user.User;
 import com.picpaysimplificado.picpaysimplificado.doMain.user.UserRepository;
 import com.picpaysimplificado.picpaysimplificado.dtos.UserDTO;
@@ -26,12 +27,14 @@ public class UserController {
 
 
     @PostMapping
+    @Transactional
     public ResponseEntity<User> createUser(@RequestBody @Valid UserDTO userDTO){
         User newUser = userServices.createUser(userDTO);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
     @GetMapping
+    @Transactional
     public ResponseEntity<List<User>> listUser(){
 
         List<User> users = this.userServices.getAllUsers();
@@ -47,6 +50,13 @@ public class UserController {
         return ResponseEntity.noContent().build();
 
     }
+
+    public ResponseEntity detalhar (@PathVariable Long id){
+        var user = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoUsers(user));
+    }
+
+
 
 
 }
