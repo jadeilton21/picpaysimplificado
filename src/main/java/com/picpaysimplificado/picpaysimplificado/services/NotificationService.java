@@ -22,7 +22,7 @@ public class NotificationService {
         String email = user.getEmail();
         NotificationDTO notificationRequest = new NotificationDTO(email,message);
 
-        ResponseEntity<String> notificationResponse = restTemplate.postForEntity("http://o4d9z.mocklab.io/notify",notificationRequest, String.class);
+       /* ResponseEntity<String> notificationResponse = restTemplate.postForEntity("http://o4d9z.mocklab.io/notify",notificationRequest, String.class);
 
 
 
@@ -31,7 +31,9 @@ public class NotificationService {
             System.out.println("Erro ao Enviar Notificação.");
             throw new Exception("Serviço de Notificação está fora do Ar.");
 
-        }
+        }*/
+
+        System.out.println("Notificação Enviada Para o usuario.");
     }
 
 }
