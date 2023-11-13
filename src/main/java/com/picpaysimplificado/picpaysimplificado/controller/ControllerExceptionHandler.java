@@ -28,7 +28,7 @@ public class ControllerExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity threatGenerealException(EntityNotFoundException exception){
+    public ResponseEntity threatGenerealException(Exception exception){
             ExceptionDTO exceptionDTO = new ExceptionDTO(exception.getMessage(),"500");
             return ResponseEntity.internalServerError().body(exceptionDTO);
     }
