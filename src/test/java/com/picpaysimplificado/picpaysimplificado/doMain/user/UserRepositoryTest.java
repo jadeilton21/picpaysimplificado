@@ -28,11 +28,11 @@ class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    @DisplayName("Should get User successFully from 08")
-    void findUserByDocument(){
+    @DisplayName("Should get User successFully from DB")
+    void findUserByDocument_Caso1(){
 
         String document = "999999999901";
-        UserDTO data = new UserDTO("Jadeilindo","Felix","JadeRasta","4444", new BigDecimal(10),document,TypeUser.USUARIOSLOCAIS);
+        UserDTO data = new UserDTO("Jadeilindo","Felix","jaderasta@gmail.com","4444", new BigDecimal(10),document,TypeUser.USUARIOSLOCAIS);
         this.createUser(data);
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
