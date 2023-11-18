@@ -1,5 +1,6 @@
 package com.picpaysimplificado.picpaysimplificado.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
@@ -20,6 +21,7 @@ class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @Test
+    @DisplayName("Deve Devolver Código Http 403 quando informações estiverem invalidas..")
     void createUser_cenario1() throws Exception {
 
         var response = mockMvc
@@ -31,5 +33,10 @@ class UserControllerTest {
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
 
 
+    }
+
+
+    @Test
+    void listUser() {
     }
 }
