@@ -42,7 +42,7 @@ public class UserController {
     }
     @Transactional
     @DeleteMapping("/{id}")
-    public ResponseEntity excluir(@PathVariable Long id){
+    public ResponseEntity excluirUser(@PathVariable Long id){
         var user = repository.getReferenceById(id);
 
         user.excluir();
@@ -51,7 +51,7 @@ public class UserController {
 
     }
 
-    public ResponseEntity detalhar (@PathVariable Long id){
+    public ResponseEntity detalharUser (@PathVariable Long id){
         var user = repository.getReferenceById(id);
         return ResponseEntity.ok(new DadosDetalhamentoUsers(user));
     }
