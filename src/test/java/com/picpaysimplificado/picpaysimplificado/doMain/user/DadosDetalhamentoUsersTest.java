@@ -35,7 +35,7 @@ class DadosDetalhamentoUsersTest {
                .andReturn().getResponse();
 
        assertThat(response.getStatus())
-               .isEqualTo(HttpStatus.BAD_REQUEST.value());
+               .isEqualTo(HttpStatus.FORBIDDEN.value());
 
 
     }
