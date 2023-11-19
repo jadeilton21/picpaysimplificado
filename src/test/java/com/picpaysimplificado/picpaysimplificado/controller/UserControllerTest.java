@@ -37,6 +37,18 @@ class UserControllerTest {
 
 
     @Test
-    void listUser() {
+    @DisplayName("DEve devolver Código Http 403 quando informações estiverem invalidas,..")
+    void listUser() throws Exception{
+
+        var response = mockMvc
+                .perform(post("/users"))
+                .andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.FORBIDDEN.value());
+
+
+
+
     }
 }
