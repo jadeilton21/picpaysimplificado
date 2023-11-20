@@ -53,6 +53,23 @@ class UserControllerTest {
     }
 
     @Test
-    void excluirUser() {
+    @DisplayName("DEve DEvolver Código Http 4003 quanod informações estiverem invalidas..")
+    void excluirUser() throws Exception {
+
+
+
+
+
+        var response = mockMvc
+                .perform(post("/users"))
+                .andReturn().getResponse();
+
+
+
+
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.FORBIDDEN.value());
     }
 }
