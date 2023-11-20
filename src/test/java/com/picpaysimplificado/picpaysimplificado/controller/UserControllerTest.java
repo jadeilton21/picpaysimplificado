@@ -39,7 +39,7 @@ class UserControllerTest {
 
     @Test
     @DisplayName("DEve devolver Código Http 403 quando informações estiverem invalidas,..")
-    void listUser() throws Exception{
+    void listUser_cenario1() throws Exception{
 
         var response = mockMvc
                 .perform(post("/users"))
@@ -55,7 +55,7 @@ class UserControllerTest {
 
     @Test
     @DisplayName("DEve DEvolver Código Http 4003 quanod informações estiverem invalidas..")
-    void excluirUser() throws Exception {
+    void excluirUser_cenario1() throws Exception {
 
 
 
@@ -76,7 +76,7 @@ class UserControllerTest {
 
     @Test
     @DisplayName("DEve Devolver Código 403 QUando Informações estiverem invalidas")
-    void detalharUser() throws Exception {
+    void detalharUser_cenario1() throws Exception {
 
         var response = mockMvc
                 .perform(post("/users"))
