@@ -72,4 +72,11 @@ class UserControllerTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
     }
+
+    @Test
+    @DisplayName("DEve Devolver Código 403 QUando Informações estiverem invalidas")
+    void detalharUser() throws Exception {
+
+        var response =
+    }
 }
