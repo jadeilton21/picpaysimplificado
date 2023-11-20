@@ -51,4 +51,8 @@ class UserControllerTest {
 
 
     }
+
+    @Test
+    void excluirUser() {
+    }
 }
