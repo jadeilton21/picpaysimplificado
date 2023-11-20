@@ -13,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
@@ -77,6 +78,11 @@ class UserControllerTest {
     @DisplayName("DEve Devolver Código 403 QUando Informações estiverem invalidas")
     void detalharUser() throws Exception {
 
-        var response =
+        var response = mockMvc
+                .perform(post("/users"))
+                .andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.FORBIDDEN.value());
     }
 }
