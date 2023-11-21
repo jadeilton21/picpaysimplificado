@@ -26,7 +26,7 @@ class ControllerExceptionHandlerTest {
     @Test
     @DisplayName("Deve Devolver Código Http 403 quando informações estiverem invalidas...")
     @WithMockUser
-    void threatDuplicationEntry() throws Exception{
+    void threatDuplicationEntry_cenario1() throws Exception{
 
 
         var response = mockMvc
@@ -40,7 +40,7 @@ class ControllerExceptionHandlerTest {
     @Test
     @DisplayName("Deve Devolver Código Http 403 quando informações estiverem invalidos...")
     @WithMockUser
-    void threat404() throws Exception{
+    void threat404_cenario1() throws Exception{
 
         var response = mockMvc
                 .perform(post("/users"))
@@ -52,6 +52,7 @@ class ControllerExceptionHandlerTest {
     }
 
     @Test
-    void threatGenerealException() {
+
+    void threatGenerealException_cenario1() {
     }
 }
