@@ -36,4 +36,10 @@ class ControllerExceptionHandlerTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 403 quando informações estiverem invalidos...")
+    @WithMockUser
+    void threat404() {
+    }
 }
