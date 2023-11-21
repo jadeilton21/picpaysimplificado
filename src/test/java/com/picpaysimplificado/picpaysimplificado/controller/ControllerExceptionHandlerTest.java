@@ -40,6 +40,14 @@ class ControllerExceptionHandlerTest {
     @Test
     @DisplayName("Deve Devolver Código Http 403 quando informações estiverem invalidos...")
     @WithMockUser
-    void threat404() {
+    void threat404() throws Exception{
+
+        var response = mockMvc
+                .perform(post("/users"))
+                .andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.FORBIDDEN.value());
+
     }
 }
