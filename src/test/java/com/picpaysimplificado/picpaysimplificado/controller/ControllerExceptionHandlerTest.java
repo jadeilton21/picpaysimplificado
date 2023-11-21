@@ -50,4 +50,8 @@ class ControllerExceptionHandlerTest {
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
 
     }
+
+    @Test
+    void threatGenerealException() {
+    }
 }
