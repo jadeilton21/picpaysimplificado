@@ -34,6 +34,5 @@ class NotificationServiceTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
 
-
     }
 }
