@@ -22,7 +22,6 @@ class UserServicesTest {
     @Autowired
     private MockMvc mockMvc;
 
-
     @Test
     @DisplayName("Deve Devolver Código http 403 quando informações estiverem invalidas...")
     @WithMockUser
@@ -31,7 +30,6 @@ class UserServicesTest {
         var response = mockMvc
                 .perform(post("/users"))
                 .andReturn().getResponse();
-
 
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
@@ -47,10 +45,18 @@ class UserServicesTest {
                 .perform(post("/users"))
                 .andReturn().getResponse();
 
-
-
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
+
+
+
+    }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 403 quando Informações estiverem Invalidas..")
+    @WithMockUser
+    void createUser() throws Exception {
+
 
 
 
