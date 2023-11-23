@@ -37,4 +37,14 @@ class UserServicesTest {
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
 
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código http 403 quando Informações estiverem Invalidas...")
+    @WithMockUser
+    void findUserById_cenario1() throws Exception {
+
+
+
+
+    }
 }
