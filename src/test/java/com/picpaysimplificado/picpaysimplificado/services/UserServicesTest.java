@@ -43,6 +43,15 @@ class UserServicesTest {
     @WithMockUser
     void findUserById_cenario1() throws Exception {
 
+        var response = mockMvc
+                .perform(post("/users"))
+                .andReturn().getResponse();
+
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.FORBIDDEN.value());
+
 
 
 
