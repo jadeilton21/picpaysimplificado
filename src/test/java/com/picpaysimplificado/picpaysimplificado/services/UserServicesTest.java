@@ -69,4 +69,8 @@ class UserServicesTest {
 
 
     }
+
+    @Test
+    void getAllUsers() {
+    }
 }
