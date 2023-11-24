@@ -73,7 +73,7 @@ class UserServicesTest {
     @Test
     @DisplayName("Deve Devolver Código 403 quando Informações forem Invalidas..")
     @WithMockUser
-    void getAllUsers() throws Exception {
+    void getAllUsers_cenario1() throws Exception {
         var response = mockMvc
                 .perform(post("/users"))
                 .andReturn().getResponse();
@@ -84,6 +84,6 @@ class UserServicesTest {
     }
 
     @Test
-    void saverUser() {
+    void saverUser_cenario1() {
     }
 }
