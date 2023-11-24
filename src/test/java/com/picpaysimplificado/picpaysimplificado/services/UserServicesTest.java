@@ -84,6 +84,19 @@ class UserServicesTest {
     }
 
     @Test
-    void saverUser_cenario1() {
+    @DisplayName("Deve Devolver Código http 403, quando Informações estiverem Invalidas...")
+    @WithMockUser
+    void saverUser_cenario1() throws Exception {
+
+
+        var response = mockMvc
+                .perform(post("/users"))
+                .andReturn().getResponse();
+
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.FORBIDDEN.value());
+
     }
 }
