@@ -78,7 +78,6 @@ class UserServicesTest {
                 .perform(post("/users"))
                 .andReturn().getResponse();
 
-
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.FORBIDDEN.value());
     }
